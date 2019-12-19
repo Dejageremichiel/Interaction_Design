@@ -255,7 +255,7 @@ body, html {
 }
 .c-bg {
     /* The image used */
-    background-image: url("images/top_bg.png");
+    background-image: url("../images/top_bg.png");
     top:0;
   
     /* Full height */
