@@ -133,23 +133,23 @@ let showdescription = queryResponse => {
 		console.log("solar noon time");
 	} else if (timeFallsInTimeline(timeNow, sunset, civilTwilightEnd)) {
 		document.querySelector('.js-light-description').innerHTML = `It's now sunset`
-		document.querySelector('.bg').style.backgroundImage = "url('../images/sunset.jpg')";
+		document.querySelector('.bg').style.backgroundImage = "url('images/sunset.jpg')";
 		//sunset time
 		console.log("sunset time");
 	} else if (timeFallsInTimeline(timeNow, civilTwilightEnd, nauticalTwilightEnd)) {
 		document.querySelector('.js-light-description').innerHTML = `It's now civil twilight`
 		//civil end time
-		document.querySelector('.bg').style.backgroundImage = "url('../images/civiltwilight.jpg')";
+		document.querySelector('.bg').style.backgroundImage = "url('images/civiltwilight.jpg')";
 		console.log("civil end time");
 	} else if (timeFallsInTimeline(timeNow, nauticalTwilightEnd, astroTwilightEnd)) {
 		document.querySelector('.js-light-description').innerHTML = `It's now nautical twilight`
 		//natuical end time
-		document.querySelector('.bg').style.backgroundImage = "url('../images/nautical.jpg')";
+		document.querySelector('.bg').style.backgroundImage = "url('images/nautical.jpg')";
 
 		console.log("natuical end time");
 	} else {
 		document.querySelector('.js-light-description').innerHTML = `It's now night`
-		document.querySelector('.bg').style.backgroundImage = "url('../images/night.jpg')";
+		document.querySelector('.bg').style.backgroundImage = "url('images/night.jpg')";
 		//astro end time
 		console.log("astro end time");
 	}
