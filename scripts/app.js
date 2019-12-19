@@ -109,26 +109,26 @@ let showdescription = queryResponse => {
 	if (timeFallsInTimeline(timeNow, astroTwilightBegin,nauticalTwilightBegin)) {
 		document.querySelector('.js-light-description').innerHTML = `It's now astro twilight`
 		console.log("astro begin time");
-		document.querySelector('.bg').style.backgroundImage = "url('../images/astronomical_twilight.jpg')";
+		document.querySelector('.bg').style.backgroundImage = "url('images/astronomical_twilight.jpg')";
 
 	} else if (timeFallsInTimeline(timeNow, nauticalTwilightBegin, civilTwilightBegin)) {
 		document.querySelector('.js-light-description').innerHTML = `It's now nautical twilight`
 		//natuical begin time
-		document.querySelector('.bg').style.backgroundImage = "url('../images/nautical.jpg')";
+		document.querySelector('.bg').style.backgroundImage = "url('images/nautical.jpg')";
 		console.log("nautical begin time");
 	} else if (timeFallsInTimeline(timeNow, civilTwilightBegin, sunrise)) {
 		document.querySelector('.js-light-description').innerHTML = `It's now civil twilight`
 		//civil begin time
-		document.querySelector('.bg').style.backgroundImage = "url('../images/civiltwilight.jpg')";
+		document.querySelector('.bg').style.backgroundImage = "url('images/civiltwilight.jpg')";
 		console.log("civil begin time");
 	} else if (timeFallsInTimeline(timeNow, sunrise, solarNoon)) {
 		document.querySelector('.js-light-description').innerHTML = `It's now sunrise`
 		//sunrise time
-		document.querySelector('.bg').style.backgroundImage = "url('../images/Iceland_447.jpg')";
+		document.querySelector('.bg').style.backgroundImage = "url('images/Iceland_447.JPG')";
 		console.log("sunrise time");
 	} else if (timeFallsInTimeline(timeNow, solarNoon, sunset)) {
 		document.querySelector('.js-light-description').innerHTML = `It's now solar noon`
-		document.querySelector('.bg').style.backgroundImage = "url('../images/Iceland_229.jpg')";
+		document.querySelector('.bg').style.backgroundImage = "url('images/Iceland_229.JPG')";
 		//solar noon time
 		console.log("solar noon time");
 	} else if (timeFallsInTimeline(timeNow, sunset, civilTwilightEnd)) {
