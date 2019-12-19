@@ -222,7 +222,7 @@ body, html {
   
 .bg {
     /* The image used */
-    background-image: url("/images/goldenhour.jpg");
+    background-image: url("images/goldenhour.jpg");
   
     /* Full height */
     width:100%;
