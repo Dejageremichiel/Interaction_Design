@@ -1,0 +1,501 @@
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+    /* Global colors */
+    --global-color-alpha-light: #4F95FF;
+    --global-color-alpha: #3385FF;
+    --global-color-alpha-dark: #2E77E6;
+    --global-color-alpha-x-dark: #1B4186;
+    --global-color-alpha-transparent: #3385ffbf;
+    --global-color-alpha-x-transparent: #3385ff4d;
+
+    --global-color-neutral-xxxx-light: #D3D6DD;
+    --global-color-neutral-xxx-light: #858EA1;
+    --global-color-neutral-xx-light: #6D788E;
+    --global-color-neutral-x-light: #55617B;
+    --global-color-neutral-light: #3D4B68;
+    --global-color-neutral: #253556;
+    --global-color-neutral-dark: #202F4C;
+    --global-color-neutral-x-dark: #1C2942;
+    --global-color-neutral-xx-dark: #182339;
+    --global-color-neutral-xxx-dark: #141D2F;
+    --global-color-neutral-xxxx-dark: #101726;
+
+    /* Baseline settings */
+    --global-baseline: 8px;         
+    --global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
+
+    --global-whitespace-xs: calc(var(--global-baseline) / 2); /* = 4px */
+    --global-whitespace-sm: calc(var(--global-baseline) * 1); /*  = 8px */
+    --global-whitespace-md: calc(var(--global-baseline) * 2); /*  = 16px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 4); /*  = 32px */
+    --global-whitespace-xl: calc(var(--global-whitespace) * 2); /*  = 48px */
+    --global-whitespace-xxl: calc(var(--global-whitespace) * 3); /*  = 72px */
+}
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: "roboto","Inter Web", sans-serif;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: white;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+    background: orange;
+    color: white;
+    text-shadow: none;
+}
+
+::selection {
+    background: orange;
+    color: white;
+    text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+Elements: Images
+---
+Default markup for images to make them responsive
+*/
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 48px;
+    margin: 0 0 var(--global-whitespace);
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 var(--global-whitespace);
+}
+
+h3 {
+    font-size: 26px;
+    line-height: 32px;
+    margin: 0 0 var(--global-whitespace);
+}
+
+h4,
+h5,
+h6 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0 0 var(--global-whitespace);
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+    margin: 0 0 var(--global-whitespace);
+}
+
+ul,
+ol {
+    padding-left: var(--global-whitespace);
+}
+
+li ul,
+li ol {
+    margin-bottom: 0;
+}
+
+blockquote {
+    font-style: normal;
+    font-size: 23px;
+    line-height: 32px;
+    margin: 0 0 var(--global-whitespace);
+}
+
+blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+figcaption {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: var(--global-whitespace-sm);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: LightGrey;
+    margin: 0 0 var(--global-whitespace);
+}
+
+a {
+    transition: all var(--transition-alpha);
+    color: var(--color-alpha);
+    outline-color: var(--color-alpha);
+    outline-width: medium;
+    outline-offset: 2px;
+}
+
+a:visited,
+a:active {
+    color: var(--color-alpha);
+}
+
+a:hover,
+a:focus {
+    color: var(--color-alpha-light);
+}
+
+label,
+input {
+    display: inline-block;
+}
+
+select {
+    width: 100%;
+}
+
+input::placeholder {
+    color: var(--color-neutral);
+}
+
+input:disabled {
+    cursor: not-allowed;
+}
+
+body, html {
+    height: 100%;
+  }
+  
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+.c-logo_title{
+    margin-right: var(--global-whitespace-xxl);
+    margin-top: var(--global-whitespace-lg);
+    margin-bottom: var(--global-whitespace-lg);
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+}
+.c-preview{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-left: var(--global-whitespace-xxl);
+    padding-top: var(--global-whitespace-md);
+    margin-right: var(--global-whitespace-xxl);
+    color: white;
+    
+}
+.c-preview_detail{
+    margin-top: var(--global-whitespace-xl);
+    text-align: center;
+}
+.c-preview_item{
+    margin-bottom: var(--global-whitespace-xl);
+    text-align: left;
+}
+.c-wrap{
+    position: relative;
+    min-height: 100vh;
+}
+.c-bg {
+    /* The image used */
+    background-image: url("/images/top_bg.png");
+    top:0;
+  
+    /* Full height */
+    width:auto;
+    height:auto;
+  
+    /* Center and scale the image nicely */
+    background-position: bottom;
+
+    background-size: cover;
+  }
+
+.c-preview_title{
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+}
+.c-right{
+    text-align: center;
+}
+.c-mockup{
+    max-width: 100%;
+    height: auto;
+}
+.c-input{
+    margin-top: var(--global-whitespace-md);
+    margin-right: -8px;
+    border-radius: 25px 0px 0px 25px;
+    padding: var(--global-whitespace-sm) 0px var(--global-whitespace-sm) var(--global-whitespace-md);
+    border: none;
+}
+
+.c-button{
+    margin-top: var(--global-whitespace-md);
+    border-radius: 0px 25px 25px 0px;
+    padding: var(--global-whitespace-sm) var(--global-whitespace-md) var(--global-whitespace-sm) var(--global-whitespace-md);
+    border: none;
+    color: white;
+    background-color: var(--global-color-neutral);
+}
+
+.c-mid_title{
+    text-align: center;
+    margin-bottom: var(--global-whitespace-xxl);
+}
+
+.c-mid_title_big{
+    font-weight: bold;
+    font-size: 32px;
+    padding: var(--global-whitespace-sm);
+    color: var(--global-color-neutral);
+}
+.c-mid_title_small{
+    color: var(--global-color-neutral-xx-light);
+}
+.c-features{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-bottom: var(--global-whitespace-xxl);
+    color: var(--global-color-neutral-xx-light);
+}
+
+.c-features_item{
+    text-align: center;
+    padding-left: var(--global-whitespace-xxl);
+    padding-right: var(--global-whitespace-xxl);
+}
+
+.c-features_title{
+    color: var(--global-color-neutral);
+    font-weight: bold;
+    font-size: 16px; 
+    padding: var(--global-whitespace-sm);
+}
+
+
+.c-footer {
+    width: 100%;
+    background-color: var(--global-color-neutral);
+    color: white;
+    display: grid;
+    grid-template-columns: auto auto;
+    position: fixed;
+    bottom: 0px;
+}
+
+.c-footer_item_left{
+    padding: var(--global-whitespace) var(--global-whitespace-xxl) ;
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.c-footer_item_right{
+    padding: var(--global-whitespace) var(--global-whitespace-xxl) ;
+    text-align: right;
+    font-size: 16px;
+}
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+/*
+    Media Queries
+    ---
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    USE THEM INLINE!
+*/
+/* Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in mobile first design
+*/
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+    .c-wrap{
+        position: relative;
+        min-height: 100vh;
+    }
+    .c-bg {
+        margin-top: -88px;
+        /* The image used */
+        background-image: url("/images/top_bg.png");
+        top:0;
+        height:auto;
+      
+        /* Center and scale the image nicely */
+        background-position: top;
+    
+        background-size: cover;
+      }
+    .c-logo_title{
+        margin-top: 104px;
+        margin-bottom: var(--global-whitespace-lg);
+        font-weight: bold;
+        font-size: 24px;
+        color: white;
+        text-align: left;
+    }
+    .c-preview_item{
+        text-align: center;
+    }
+    .c-preview{
+        display: grid;
+        grid-template-columns: 100%;
+        margin-left: var(--global-whitespace-md);
+        margin-right: var(--global-whitespace-md);
+        color: white;
+    }
+
+    .c-preview_title{
+        color: white;
+        font-weight: bold;
+        font-size: 32px;
+        margin-bottom: var(--global-whitespace-md);
+    }
+    .c-preview_text{
+        margin-bottom: var(--global-whitespace-md);
+    }
+
+    .c-input{
+        margin-top: var(--global-whitespace-md);
+        border-radius: 25px;
+    }
+    
+    .c-mockup{
+        max-width: 100%;
+        height: auto;
+    }
+    .c-mid_title{
+        text-align: center;
+        margin-bottom: var(--global-whitespace-lg);
+    }
+    .c-mid_title_big{
+        font-weight: bold;
+        font-size: 24px;
+        padding: var(--global-whitespace-sm);
+    }
+    .c-features{
+        display: grid;
+        grid-template-columns: auto;
+        margin-left: var(--global-whitespace-md);
+        margin-right: var(--global-whitespace-md);
+    }
+    .c-features_item{
+        text-align: center;
+        padding-top: var(--global-whitespace-lg);
+        padding-bottom: var(--global-whitespace-lg);
+    }
+    .c-footer {
+        width: 100%;
+        background-color: var(--global-color-neutral);
+        color: white;
+        display: grid;
+        grid-template-columns: auto auto;
+        position: initial;
+        bottom: 0px;
+    }
+    .c-footer_item_left{
+        padding: var(--global-whitespace-md) var(--global-whitespace-lg) ;
+        text-align: left;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    
+    .c-footer_item_right{
+        padding: var(--global-whitespace-md) var(--global-whitespace-lg);
+        text-align: right;
+        font-size: 13px;
+    }
+    .c-preview_detail{
+        margin-top: var(--global-whitespace-lg);
+        text-align: center;
+    }
+    
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .c-mockup{
+        max-width: 100%;
+        height: auto;
+    }
+    
+}
+
+
+ /* Large devices (landscape tablets, desktops, 992px and up) */
+@media (min-width: 992px) {
+    .c-mockup{
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+ /* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .c-mockup{
+        max-width: 60%;
+        height: auto;
+    }
+}

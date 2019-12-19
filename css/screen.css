@@ -1,0 +1,412 @@
+
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+:root {
+    /* Global colors */
+    --global-color-alpha-light: #4F95FF;
+    --global-color-alpha: #3385FF;
+    --global-color-alpha-dark: #2E77E6;
+    --global-color-alpha-x-dark: #1B4186;
+    --global-color-alpha-transparent: #3385ffbf;
+    --global-color-alpha-x-transparent: #3385ff4d;
+
+    --global-color-neutral-xxxx-light: #D3D6DD;
+    --global-color-neutral-xxx-light: #858EA1;
+    --global-color-neutral-xx-light: #6D788E;
+    --global-color-neutral-x-light: #55617B;
+    --global-color-neutral-light: #3D4B68;
+    --global-color-neutral: #253556;
+    --global-color-neutral-dark: #202F4C;
+    --global-color-neutral-x-dark: #1C2942;
+    --global-color-neutral-xx-dark: #182339;
+    --global-color-neutral-xxx-dark: #141D2F;
+    --global-color-neutral-xxxx-dark: #101726;
+
+    /* Baseline settings */
+    --global-baseline: 8px;         
+    --global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
+
+    --global-whitespace-xs: calc(var(--global-baseline) / 2); /* = 4px */
+    --global-whitespace-sm: calc(var(--global-baseline) * 1); /*  = 8px */
+    --global-whitespace-md: calc(var(--global-baseline) * 2); /*  = 16px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 4); /*  = 32px */
+    --global-whitespace-xl: calc(var(--global-whitespace) * 2); /*  = 48px */
+    --global-whitespace-xxl: calc(var(--global-whitespace) * 3); /*  = 72px */
+}
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: "roboto","Inter Web", sans-serif;
+    color: white;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: white;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+    background: orange;
+    color: white;
+    text-shadow: none;
+}
+
+::selection {
+    background: orange;
+    color: white;
+    text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+Elements: Images
+---
+Default markup for images to make them responsive
+*/
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 48px;
+    margin: 0 0 var(--global-whitespace);
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 var(--global-whitespace);
+}
+
+h3 {
+    font-size: 26px;
+    line-height: 32px;
+    margin: 0 0 var(--global-whitespace);
+}
+
+h4,
+h5,
+h6 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0 0 var(--global-whitespace);
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+    margin: 0 0 var(--global-whitespace);
+}
+
+ul,
+ol {
+    padding-left: var(--global-whitespace);
+}
+
+li ul,
+li ol {
+    margin-bottom: 0;
+}
+
+blockquote {
+    font-style: normal;
+    font-size: 23px;
+    line-height: 32px;
+    margin: 0 0 var(--global-whitespace);
+}
+
+blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+figcaption {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: var(--global-whitespace-sm);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: LightGrey;
+    margin: 0 0 var(--global-whitespace);
+}
+
+a {
+    transition: all var(--transition-alpha);
+    color: var(--color-alpha);
+    outline-color: var(--color-alpha);
+    outline-width: medium;
+    outline-offset: 2px;
+}
+
+a:visited,
+a:active {
+    color: var(--color-alpha);
+}
+
+a:hover,
+a:focus {
+    color: var(--color-alpha-light);
+}
+
+label,
+input {
+    display: inline-block;
+}
+
+select {
+    width: 100%;
+}
+
+input::placeholder {
+    color: var(--color-neutral);
+}
+
+input:disabled {
+    cursor: not-allowed;
+}
+
+body, html {
+    height: 100%;
+  }
+  
+.bg {
+    /* The image used */
+    background-image: url("/images/goldenhour.jpg");
+  
+    /* Full height */
+    width:100%;
+    height:100%;
+    position:fixed;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-size: cover;
+
+  }
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+.c-app{
+    max-width: 464px;
+	padding: var(--global-whitespace-lg);
+	width: 100%;
+    height: 100vh;
+    max-width: 400;
+    margin: auto;
+    position: center;
+}
+.c-logo{
+    padding: var(--global-whitespace-lg);
+    font-weight: bold;
+}
+
+.c-temperature{
+    font-weight: bold;
+    font-size: 48px;
+}
+
+.c-sun {
+    height: 22px;
+    width: 22px;
+
+}
+.c-weather{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    position: absolute;
+    padding: var(--global-whitespace-lg); 
+    bottom: var(--global-whitespace-lg);
+    
+}
+
+.c-weather-item{
+    padding: 0 var(--global-whitespace-lg) ;
+    text-align: center;
+}
+
+.c-weather-item-line{
+    border-right: 1px solid white;
+}
+
+.c-time{
+    display: grid;
+    grid-template-columns: auto;
+    padding: var(--global-whitespace-xxl);
+    
+}
+
+.c-time-item{
+    padding: var(--global-whitespace-md);
+}
+
+.c-time-item-line{
+    border-bottom: 1px solid white;
+}
+.c-time-item-div{
+    padding: 0 0 0 var(--global-whitespace);
+}
+
+.c-flexbox{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.c-weather-center{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#load{
+    width:100%;
+    height:100%;
+    position:fixed;
+    background-color: #F79028;
+
+}
+
+.spinner {
+    width: 75px;
+    height: 75px;
+    position: relative;
+    margin: 75px auto;
+  }
+  
+  .double-bounce1, .double-bounce2 {
+    width: 75px;
+    height: 75px;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.6;
+    position: fixed;
+    margin-top: -37.5px;
+    margin-left: -37.5px;
+    
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+  }
+  
+  .double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+  
+  @-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+  }
+  
+  @keyframes sk-bounce {
+    0%, 100% { 
+      transform: scale(0.0);
+      -webkit-transform: scale(0.0);
+    } 50% { 
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+  }
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+/*
+    Media Queries
+    ---
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    USE THEM INLINE!
+*/
+/* Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in mobile first design
+*/
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+    .c-weather{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        position: absolute;
+        padding: var(--global-whitespace-sm); 
+        bottom: 2%;
+    }
+    .c-weather-item{
+        margin: 0 0 0px;
+        padding: 0 var(--global-whitespace-md) ;
+        text-align: center;
+    }
+    .c-logo{
+        padding: var(--global-whitespace-md);
+        top: 1%;
+        font-weight: bold;
+    }
+    .c-time{
+        display: grid;
+        grid-template-columns: auto;
+        padding: var(--global-whitespace-lg);
+        
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+ /* Large devices (landscape tablets, desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+ /* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
